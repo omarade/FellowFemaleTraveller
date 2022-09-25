@@ -1,35 +1,30 @@
 package nl.fontys.fft
 
-import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import nl.fontys.fft.databinding.ActivityMainBinding
+import android.os.Bundle
+import android.widget.Button
+import nl.fontys.fft.activities.GuestChoiceActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var btnHost: Button
+    private lateinit var btnGuest: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        btnHost = findViewById(R.id.btnHost)
+        btnGuest = findViewById(R.id.btnGuest)
 
-        val navView: BottomNavigationView = binding.navView
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+
+        btnGuest.setOnClickListener {
+            val intent = Intent(this, GuestChoiceActivity::class.java)
+            intent.putExtra("key", "value")
+            startActivity(intent)
+        }
+
     }
 }
