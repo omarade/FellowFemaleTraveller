@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import nl.fontys.fft.activities.GuestChoiceActivity
+import nl.fontys.fft.activities.HostForm1
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +23,12 @@ class MainActivity : AppCompatActivity() {
 
         btnGuest.setOnClickListener {
             val intent = Intent(this, GuestChoiceActivity::class.java)
+            intent.putExtra("key", "value")
+            startActivity(intent)
+        }
+
+        btnHost.setOnClickListener {
+            val intent = Intent(this, HostForm1::class.java)
             intent.putExtra("key", "value")
             startActivity(intent)
         }
