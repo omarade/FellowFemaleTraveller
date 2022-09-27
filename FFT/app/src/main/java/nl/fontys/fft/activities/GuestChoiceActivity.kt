@@ -22,13 +22,13 @@ class GuestChoiceActivity : AppCompatActivity() {
 
         btnFindHost.setOnClickListener {
             val intent = Intent(this, FindHostActivity::class.java)
-            intent.putExtra("Type", "Host")
+            intent.putExtra("type", "host")
             startActivity(intent)
         }
 
         btnMeet.setOnClickListener {
             val intent = Intent(this, FindHostActivity::class.java)
-            intent.putExtra("key", "Meet")
+            intent.putExtra("type", "meet")
             startActivity(intent)
         }
     }

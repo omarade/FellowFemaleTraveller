@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         btnGuest.setOnClickListener {
             val intent = Intent(this, GuestChoiceActivity::class.java)
-            intent.putExtra("key", "value")
             startActivity(intent)
         }
 
