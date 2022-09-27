@@ -1,8 +1,8 @@
 package nl.fontys.fft.activities
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Point
 import android.graphics.Rect
 import android.location.Address
 import android.location.Geocoder
@@ -13,40 +13,57 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.getSystemService
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.*
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import nl.fontys.fft.R
 
 
-class FindHostActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
+class FindHostActivity: AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
 
     private lateinit var mapFrag: SupportMapFragment
-    lateinit var clientLocation : FusedLocationProviderClient
+    lateinit var clientLocation: FusedLocationProviderClient
 
     lateinit var gglMap: GoogleMap
 
-    private lateinit var etCity : EditText
+    private lateinit var etCity: EditText
+    private lateinit var etDate: EditText
+    private lateinit var etGuestNr: EditText
+    private lateinit var btnSearch: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_find_host)
 
         etCity = findViewById(R.id.etCity)
+        etDate = findViewById(R.id.etDate)
+        etGuestNr = findViewById(R.id.etGuestsNr)
+        btnSearch = findViewById(R.id.btnSearch)
 
         mapFrag = supportFragmentManager.findFragmentById(R.id.mapView) as SupportMapFragment
 
         mapFrag.getMapAsync(this)
 
         clientLocation = LocationServices.getFusedLocationProviderClient(this)
+
+        btnSearch.setOnClickListener {
+            val intent = Intent(this, HostsResult::class.java)
+            val extras = Bundle()
+            extras.putString("city", etCity.text.toString())
+            extras.putString("date", etDate.text.toString())
+            extras.putString("guests_nr", etGuestNr.text.toString())
+            intent.putExtras(extras)
+            startActivity(intent)
+        }
     }
 
     //When map is ready

@@ -18,12 +18,9 @@ class MainActivity : AppCompatActivity() {
         btnHost = findViewById(R.id.btnHost)
         btnGuest = findViewById(R.id.btnGuest)
 
-
-
         btnGuest.setOnClickListener {
             val intent = Intent(this, GuestChoiceActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

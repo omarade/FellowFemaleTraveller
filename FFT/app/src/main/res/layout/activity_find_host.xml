@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_plain"
     tools:context=".activities.FindHostActivity">
-    <!--    android:background="@drawable/fft_bg1"-->
-
-    <!--    <com.google.android.gms.maps.MapView-->
-    <!--        android:id="@+id/mapView"-->
-    <!--        android:name="com"-->
-    <!--        android:layout_width="332dp"-->
-    <!--        android:layout_height="249dp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:layout_constraintVertical_bias="0.155" />-->
 
     <fragment
         android:id="@+id/mapView"
@@ -32,12 +20,13 @@
         app:layout_constraintVertical_bias="0.353" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/etDate"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:ems="10"
         android:hint="E.g. 31/12/2022"
         android:inputType="date"
+        android:textColor="@color/text_color"
         android:textColorHint="@color/hint_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,8 +43,9 @@
         android:hint="Enter City Name"
         android:inputType="textPersonName"
         android:textAlignment="center"
-        android:textColor="#4C4242"
+        android:textColor="@color/text_color"
         android:textColorHint="@color/hint_color"
+        android:selectAllOnFocus="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -64,12 +54,13 @@
         app:layout_constraintVertical_bias="0.14" />
 
     <EditText
-        android:id="@+id/etPplNumber"
+        android:id="@+id/etGuestsNr"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:ems="10"
         android:hint="Guests Number"
         android:inputType="textPersonName"
+        android:textColor="@color/text_color"
         android:textColorHint="@color/hint_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,6 +75,7 @@
         android:layout_height="65dp"
         android:backgroundTint="@color/btn_blue"
         android:text="Search"
+        android:textColor="@color/white"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +89,7 @@
         android:layout_width="76dp"
         android:layout_height="38dp"
         android:text="Date"
-        android:textColor="#120F0F"
+        android:textColor="@color/text_color"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +103,7 @@
         android:layout_width="92dp"
         android:layout_height="35dp"
         android:text="Number"
-        android:textColor="#120F0F"
+        android:textColor="@color/text_color"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
