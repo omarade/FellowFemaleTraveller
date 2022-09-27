@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"/>
+    <item android:title="Messages"
+        android:id="@+id/msg"
+        android:enabled="true"
+        android:icon="@drawable/ic_message"/>
+    <item android:title="Help"
+        android:id="@+id/help"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_help_24"/>
+</menu>

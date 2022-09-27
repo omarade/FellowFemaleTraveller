@@ -15,6 +15,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -25,6 +26,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
+import nl.fontys.fft.MainActivity
 import nl.fontys.fft.R
 
 
@@ -39,15 +43,19 @@ class FindHostActivity: AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMap
     private lateinit var etDate: EditText
     private lateinit var etGuestNr: EditText
     private lateinit var btnSearch: Button
+    private lateinit var botNav: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_find_host)
 
+        //Back btn
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         etCity = findViewById(R.id.etCity)
         etDate = findViewById(R.id.etDate)
         etGuestNr = findViewById(R.id.etGuestsNr)
         btnSearch = findViewById(R.id.btnSearch)
+        botNav = findViewById(R.id.bnv)
 
         mapFrag = supportFragmentManager.findFragmentById(R.id.mapView) as SupportMapFragment
 
@@ -63,6 +71,27 @@ class FindHostActivity: AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMap
             extras.putString("guests_nr", etGuestNr.text.toString())
             intent.putExtras(extras)
             startActivity(intent)
+        }
+
+        //Bottom-nav setup
+        botNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    // Respond to navigation item 1 click
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.msg -> {
+                    // Respond to navigation item 2 click
+                    true
+                }
+                R.id.help -> {
+                    // Respond to navigation item 2 click
+                    true
+                }
+                else -> false
+            }
         }
     }
 
