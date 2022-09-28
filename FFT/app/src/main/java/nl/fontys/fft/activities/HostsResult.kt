@@ -27,7 +27,7 @@ class HostsResult : AppCompatActivity() {
         setContentView(R.layout.activity_hosts_result)
 
         //Back button
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         botNav = findViewById(R.id.bnv)
         lvHosts = findViewById(R.id.lvHosts)

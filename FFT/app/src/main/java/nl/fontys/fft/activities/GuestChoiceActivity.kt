@@ -22,7 +22,7 @@ class GuestChoiceActivity : AppCompatActivity() {
         setContentView(R.layout.activity_guest_choice)
 
         //Back btn
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         btnFindHost = findViewById(R.id.btnFindHost)
         btnMeet = findViewById(R.id.btnMeet)

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "412930623289",
+    "project_id": "fftraveller-3b9f4",
+    "storage_bucket": "fftraveller-3b9f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412930623289:android:ada9571ae2ec4c26d40ae8",
+        "android_client_info": {
+          "package_name": "nl.fontys.fft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412930623289-6kcb11faf900a6u89imja318340ck6t0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmWrdu3tnd5nxoQdqcGlCSEYc7aYIrpL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412930623289-6kcb11faf900a6u89imja318340ck6t0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

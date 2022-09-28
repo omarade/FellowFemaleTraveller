@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import nl.fontys.fft.activities.GuestChoiceActivity
+import nl.fontys.fft.activities.HostForm1
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         botNav.setOnItemSelectedListener { item ->
 
             when (item.itemId) {
@@ -47,5 +47,12 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        btnHost.setOnClickListener {
+            val intent = Intent(this, HostForm1::class.java)
+            intent.putExtra("key", "value")
+            startActivity(intent)
+        }
+
     }
 }
